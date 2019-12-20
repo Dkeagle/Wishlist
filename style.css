@@ -1,0 +1,106 @@
+@font-face{
+	font-family: hynings;
+	src: url(HyningsHandwriting-Regular.ttf);
+	/* https://www.dafont.com/fr/hynings-handwriting.font */
+}
+
+body{
+	margin: 0;
+	font-size: 16px;
+	background: linear-gradient(to bottom right, #452A22, #E74822) fixed;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+img{
+	background-color: #000000;
+}
+
+a{
+	margin: 2vw;
+	color: #000000;
+	text-decoration: none;
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+.polaroid{
+	display: flex;
+	flex-direction: column;
+	width: 18vw;
+	height: 24vw;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+	border: 10px solid #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+.polaroid img{
+	width: 100%;
+	height: 75%;
+	outline: 1px solid #000000;
+	transition: ease-in-out .5s filter;
+}
+
+.polaroid:hover img{
+	transition: ease-in-out .5s filter;
+	filter: grayscale(1);
+}
+
+.polaroid p{
+	text-align: center;
+	font-family: hynings, 'Times New Roman', serif;
+	margin: auto;
+	font-weight: bold;
+}
+
+@media screen and (orientation: portrait){
+	body{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.polaroid{
+		width: 60vw;
+		height: 80vw;
+		margin: 5vw;
+	}
+
+	.polaroid p{
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	.polaroid p{
+		font-size: 1.5em;
+	}
+}
+
+.tl{
+	object-fit: cover;
+	object-position: top left;
+}
+
+.tr{
+	object-fit: cover;
+	object-position: top right;
+}
+
+.bl{
+	object-fit: cover;
+	object-position: bottom left;
+}
+
+.br{
+	object-fit: cover;
+	object-position: bottom right;
+}
+
+.center{
+	object-fit: cover;
+}
