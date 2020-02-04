@@ -1,0 +1,18 @@
+[
+    {
+        "id": "0",
+        "name": "Objet1",
+        "img": "www.lien.image1",
+        "origin": "",
+        "bgColor": "",
+        "link": "www.achat.objet1"
+    },
+    {
+        "id": "2",
+        "name": "Objet3",
+        "img": "www.lien.image3",
+        "origin": "",
+        "bgColor": "",
+        "link": "www.achat.objet3"
+    }
+]
