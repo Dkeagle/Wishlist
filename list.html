@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wishlist - Add a new article</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<header>
+		<h1 class="title text left">Settings</h1>
+		<a class="icons text right" href="index.html" title="Home page">H</a>
+		<div class="clearBoth"></div>
+	</header>
+	<div id="preview"></div>
+	<div class="form">
+		<label for="newName">Item name: </label>
+		<input type="text" id="newName">
+		<label for="newImg">Image link: </label>
+		<input type="text" id="newImg">
+		<label for="newOrigin">Origin point of image: </label>
+		<select id="newOrigin">
+			<option value="" selected>None</option>
+			<option value="center">Center</option>
+			<option value="bl">Bottom Left</option>
+			<option value="br">Bottom Right</option>
+			<option value="tl">Top Left</option>
+			<option value="tr">Top Right</option>
+		</select>
+		<div class="colorPicker">
+			<label for="newBgcolor">Image background color: </label>
+			<input type="text" id="newBgcolor" value="#000000">
+			<input type="color" id="newBgcolorPicker">
+		</div>
+		<label for="newLink">Link to the article: </label>
+		<input type="text" id="newLink">
+		<div class="buttonContainer">
+			<button id="previewButton">Preview</button>
+			<button id="addItem">Add item</button>
+		</div>
+		<div id="errorBox">The name cannot exceed 50 characters!</div>
+	</div>
+	<label for="passwordInput">Password: </label>
+	<input type="password" id="passwordInput" placeholder="Leave blank if none.">
+	<div class="listContainer">
+		<table id="list">
+		</table>
+	</div>
+</body>
+</html>

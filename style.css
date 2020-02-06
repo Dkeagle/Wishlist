@@ -1,26 +1,77 @@
 @font-face{
-	font-family: hynings;
-	src: url(HyningsHandwriting-Regular.ttf);
-	/* https://www.dafont.com/fr/hynings-handwriting.font */
+	font-family: Hynings;
+	src: url(fonts/HyningsHandwriting-Regular.ttf) format('truetype');
+	/* https://www.dafont.com/fr/Hynings-handwriting.font */
+}
+
+@font-face{
+    font-family: HeydingsIcons;
+    src: url(fonts/heydings-icons.ttf) format('truetype');
+	/* https://www.dafont.com/heydings-icons.font */
 }
 
 body{
 	margin: 0;
 	font-size: 16px;
 	background: linear-gradient(to bottom right, #452A22, #E74822) fixed;
+}
+
+header{
+	width: 100%;
+}
+
+#articles{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-img{
-	background-color: #000000;
+#preview{
+	display: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.text{
+	margin: 10px 3vw 0 3vw; 
+	color: #FFFFFF;
+	font-size: 3em;
+}
+
+.title{
+	font-family: Hynings;
+	cursor: default;
+}
+
+.icons{
+	font-family: HeydingsIcons;
+	cursor: pointer;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.clearBoth{
+	clear: both;
 }
 
 a{
 	margin: 2vw;
 	color: #000000;
+	border: 5px solid red;
 	text-decoration: none;
 }
 
@@ -43,6 +94,7 @@ a{
 	height: 75%;
 	outline: 1px solid #000000;
 	transition: ease-in-out .5s filter;
+	background-color: #000000;
 }
 
 .polaroid:hover img{
@@ -52,7 +104,7 @@ a{
 
 .polaroid p{
 	text-align: center;
-	font-family: hynings, 'Times New Roman', serif;
+	font-family: Hynings, 'Times New Roman', serif;
 	margin: auto;
 	font-weight: bold;
 }
