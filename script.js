@@ -232,7 +232,6 @@ function GenTableHeader(container){
     /* Create the 'tr' tag */
     tr = document.createElement("tr");
     /* Create the 'th' tags */
-    thId = document.createElement("th");
     thName = document.createElement("th");
     thImg = document.createElement("th");
     thOrigin = document.createElement("th");
@@ -241,7 +240,6 @@ function GenTableHeader(container){
     thDelete = document.createElement("th");
 
     /* Fill them */
-    thId.innerHTML = "ID";
     thName.innerHTML = "Name";
     thImg.innerHTML = "Img";
     thOrigin.innerHTML = "Origin";
@@ -250,7 +248,6 @@ function GenTableHeader(container){
     thDelete.innerHTML = "Delete ?";
 
     /* Append everything */
-    tr.appendChild(thId);
     tr.appendChild(thName);
     tr.appendChild(thImg);
     tr.appendChild(thOrigin);
