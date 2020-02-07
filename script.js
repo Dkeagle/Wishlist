@@ -366,6 +366,7 @@ function ClearForm(){
 	// Variables
 	let newName = document.getElementById("newName");
 	let newImg = document.getElementById("newImg");
+	let newOrigin = document.getElementById("newOrigin");
 	let newBgcolor = document.getElementById("newBgcolor");
 	let newBgcolorPicker = document.getElementById("newBgcolorPicker");
 	let newLink = document.getElementById("newLink");
@@ -373,6 +374,7 @@ function ClearForm(){
 	// Code
 	newName.value = "";
 	newImg.value = "";
+	newOrigin.selectedIndex=0;
 	newBgcolor.value = "#000000";
 	newBgcolorPicker.value = "#000000";
 	newLink.value = "";
