@@ -10,14 +10,27 @@
 	/* https://www.dafont.com/heydings-icons.font */
 }
 
+::-webkit-scrollbar{
+	display: none;
+}
+
 body{
 	margin: 0;
 	font-size: 16px;
 	background: linear-gradient(to bottom right, #452A22, #E74822) fixed;
+	color: #FFFFFF;
 }
 
 header{
 	width: 100%;
+}
+
+p{
+	margin: 0;
+}
+
+button{
+	cursor: pointer;
 }
 
 #articles{
@@ -38,6 +51,94 @@ header{
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.6);
+}
+
+.form{
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 33vw;
+}
+
+.form label{
+	margin: 5px;
+}
+
+.form input, .form select{
+	margin-bottom: 5px;
+}
+
+.form .colorPicker{
+	display: flex;
+	flex-direction: row;
+}
+
+.form .colorInput{
+	display: flex;
+	flex-direction: column;
+}
+
+.form input[type=color]{
+	height: auto;
+	width: 40vw;
+	margin: 5px;
+}
+
+.buttonContainer{
+	margin: 10px auto;
+}
+
+.buttonContainer button{
+	padding: 7px; 
+	border-radius: 15px 0;
+}
+
+.buttonContainer button:first-child{
+	margin-right: 10px;
+}
+
+#errorBox{
+	text-align: center;
+}
+
+table{
+	margin: auto;
+	border-collapse: collapse;
+	text-align: center;
+	max-width: 100%;
+}
+
+th, td{
+	border: 1px solid #FFFFFF;
+	padding: 5px;
+	word-wrap: break-word;
+	max-width: 20vw;
+}
+
+td:nth-child(1), td:nth-child(5){
+	text-align: left;
+}
+
+td:nth-child(2){
+	background-size: cover;
+	overflow: scroll;
+	background-repeat: no-repeat;
+	background-position: center;
+	/* padding: 5vw 5vw; */
+}
+
+td:nth-child(3){
+	text-transform: uppercase;
+}
+
+td:last-child{
+	font-size: 2em;
+	padding: 0;
+}
+
+td a{
+	margin: 0;
 }
 
 .text{
@@ -71,12 +172,8 @@ header{
 a{
 	margin: 2vw;
 	color: #000000;
-	border: 5px solid red;
 	text-decoration: none;
-}
-
-::-webkit-scrollbar{
-	display: none;
+	height: fit-content;
 }
 
 .polaroid{
@@ -124,6 +221,10 @@ a{
 
 	.polaroid p{
 		font-size: 1.5em;
+	}
+
+	.form{
+		width: 80vw;
 	}
 }
 

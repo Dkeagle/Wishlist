@@ -152,9 +152,7 @@ function GenPolaroid(serverResponse, container){
 		}
 
 		/* Apply background color if needed */
-		if(bgcolor !== undefined){
-			imgTag.style.backgroundColor = bgcolor.innerHTML;
-		}
+		imgTag.style.backgroundColor = bgcolor.innerHTML;
 
 		/* Create 'p' tag */
 		let pTag = document.createElement("p");
@@ -178,7 +176,6 @@ function GenTable(serverResponse, container){
 	
 	// Code
 	/* Generate the table first line */
-	GenTableHeader(container);
 
 	/* Create the 'table' tag */
 	for(let i = 0; i < items.length; i++){
@@ -195,7 +192,6 @@ function GenTable(serverResponse, container){
 		let tr = document.createElement("tr");
 
 		/* Create the 'td' tags */
-		let tdId = document.createElement("td");
 		let tdName = document.createElement("td");
 		let tdImg = document.createElement("td");
 		let tdOrigin = document.createElement("td");
@@ -204,12 +200,12 @@ function GenTable(serverResponse, container){
 		let tdDelete = document.createElement("td");
 
 		/* Fill the 'td' tags with informations from the DB */
-		tdId.innerHTML = id.innerHTML;
 		tdName.innerHTML = name.innerHTML;
-		tdImg.innerHTML = img.innerHTML;
-		origin !== undefined ? tdOrigin.innerHTML = origin.innerHTML : tdOrigin.innerHTML = "X";
-		bgcolor !== undefined ? tdBgcolor.innerHTML = bgcolor.innerHTML : tdBgcolor.innerHTML = "X";
-		tdLink.innerHTML = link.innerHTML;
+		tdImg.innerHTML = "<button><a target=\"_blank\" href=\"" + img.innerHTML + "\">Image</a></button>";
+		origin !== undefined ? tdOrigin.innerHTML = origin.innerHTML : tdOrigin.innerHTML = "None";
+		tdBgcolor.innerHTML = bgcolor.innerHTML;
+		tdBgcolor.title = bgcolor.innerHTML;
+		tdLink.innerHTML = "<button><a target=\"_blank\" href=\"" + link.innerHTML + "\">Link</a></button>";
 		
 		/* Create the delete button for each item */
 		let delButton = document.createElement("p");
@@ -219,7 +215,6 @@ function GenTable(serverResponse, container){
 		tdDelete.appendChild(delButton);
 
 		/* Append the 'td' to the 'tr' tag */
-		tr.appendChild(tdId);
 		tr.appendChild(tdName);
 		tr.appendChild(tdImg);
 		tr.appendChild(tdOrigin);
@@ -232,39 +227,6 @@ function GenTable(serverResponse, container){
 	}
 }
 
-function GenTableHeader(container){
-	// Code
-	/* Create the 'tr' tag */
-	tr = document.createElement("tr");
-	/* Create the 'th' tags */
-	thId = document.createElement("th");
-	thName = document.createElement("th");
-	thImg = document.createElement("th");
-	thOrigin = document.createElement("th");
-	thBgcolor = document.createElement("th");
-	thLink = document.createElement("th");
-	thDelete = document.createElement("th");
-
-	/* Fill them */
-	thId.innerHTML = "ID";
-	thName.innerHTML = "Name";
-	thImg.innerHTML = "Img";
-	thOrigin.innerHTML = "Origin";
-	thBgcolor.innerHTML = "Background Color";
-	thLink.innerHTML = "Link";
-	thDelete.innerHTML = "Delete ?";
-
-	/* Append everything */
-	tr.appendChild(thId);
-	tr.appendChild(thName);
-	tr.appendChild(thImg);
-	tr.appendChild(thOrigin);
-	tr.appendChild(thBgcolor);
-	tr.appendChild(thLink);
-	tr.appendChild(thDelete);
-	container.appendChild(tr)
-}
-
 function CheckItem(callback){
 	// Variables
 	let newName = document.getElementById("newName").value;
@@ -272,8 +234,9 @@ function CheckItem(callback){
 	let newOrigin = document.getElementById("newOrigin").value;
 	let newBgcolor = document.getElementById("newBgcolor").value;
 	let newLink = document.getElementById("newLink").value;
-	let hexPattern = /^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/;
 	let imgPattern = /.*\.jpg$|.*\.jpeg$|.*\.bmp$|.*\.png$/;
+	let hexPattern = /^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/;
+	let linkPattern = /^http.*$/;
 
 	// Code
 	/* Clear errorBox */
@@ -307,6 +270,8 @@ function CheckItem(callback){
 	if(newLink == ""){
 		ErrorHandler("L10");
 		return;
+	}else if(!newLink.match(linkPattern)){
+		newLink = "http://" + newLink;
 	}
 
 	/* Send item */
@@ -396,7 +361,7 @@ window.addEventListener("load", function(){
 		addItem.addEventListener("click", () => CheckItem(AddItem));
 		newBgcolor.addEventListener("keyup", function(){
 			if(newBgcolor.value == "") newBgcolor.value = "#";
-			newBgcolorPicker.value = newBgcolor.value;
+			if(newBgcolor.value.length == 7) newBgcolorPicker.value = newBgcolor.value;
 		});
 		newBgcolorPicker.addEventListener("input", function(){
 			newBgcolor.value = newBgcolorPicker.value;

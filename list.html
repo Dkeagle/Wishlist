@@ -13,7 +13,9 @@
 		<a class="icons text right" href="index.html" title="Home page">H</a>
 		<div class="clearBoth"></div>
 	</header>
+	<!-- Preview -->
 	<div id="preview"></div>
+	<!-- Add item form -->
 	<div class="form">
 		<label for="newName">Item name: </label>
 		<input type="text" id="newName">
@@ -29,22 +31,33 @@
 			<option value="tr">Top Right</option>
 		</select>
 		<div class="colorPicker">
-			<label for="newBgcolor">Image background color: </label>
-			<input type="text" id="newBgcolor" value="#000000">
+			<div class="colorInput">
+				<label for="newBgcolor">Image background color: </label>
+				<input type="text" id="newBgcolor" value="#000000">
+			</div>
 			<input type="color" id="newBgcolorPicker">
 		</div>
 		<label for="newLink">Link to the article: </label>
 		<input type="text" id="newLink">
+		<label for="passwordInput">Password: </label>
+		<input type="password" id="passwordInput" placeholder="Leave blank if none.">
 		<div class="buttonContainer">
 			<button id="previewButton">Preview</button>
 			<button id="addItem">Add item</button>
 		</div>
-		<div id="errorBox">The name cannot exceed 50 characters!</div>
+		<div id="errorBox"></div>
 	</div>
-	<label for="passwordInput">Password: </label>
-	<input type="password" id="passwordInput" placeholder="Leave blank if none.">
+	<!-- Item list -->
 	<div class="listContainer">
 		<table id="list">
+			<tr>
+				<th>Name</th>
+				<th>IMG</th>
+				<th>Origin</th>
+				<th>Background Color</th>
+				<th>Link</th>
+				<th>Action</th>
+			</tr>
 		</table>
 	</div>
 </body>
