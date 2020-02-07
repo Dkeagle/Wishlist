@@ -1,2 +1,0 @@
-# Ignore the "normal" sqlite table, we only want to update the empty one, as a sample
-articles.sqlite
