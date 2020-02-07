@@ -176,7 +176,7 @@ function GenTable(serverResponse, container){
 	
 	// Code
 	/* Generate the table first line */
-
+	GenTableHeader(container);
 	/* Create the 'table' tag */
 	for(let i = 0; i < items.length; i++){
 		/* Storing each item attribute in a appropriate var */
@@ -225,6 +225,39 @@ function GenTable(serverResponse, container){
 		/* Append the 'tr' tag to the table */
 		container.appendChild(tr);
 	}
+}
+
+function GenTableHeader(container){
+	// Code
+    /* Create the 'tr' tag */
+    tr = document.createElement("tr");
+    /* Create the 'th' tags */
+    thId = document.createElement("th");
+    thName = document.createElement("th");
+    thImg = document.createElement("th");
+    thOrigin = document.createElement("th");
+    thBgcolor = document.createElement("th");
+    thLink = document.createElement("th");
+    thDelete = document.createElement("th");
+
+    /* Fill them */
+    thId.innerHTML = "ID";
+    thName.innerHTML = "Name";
+    thImg.innerHTML = "Img";
+    thOrigin.innerHTML = "Origin";
+    thBgcolor.innerHTML = "Background Color";
+    thLink.innerHTML = "Link";
+    thDelete.innerHTML = "Delete ?";
+
+    /* Append everything */
+    tr.appendChild(thId);
+    tr.appendChild(thName);
+    tr.appendChild(thImg);
+    tr.appendChild(thOrigin);
+    tr.appendChild(thBgcolor);
+    tr.appendChild(thLink);
+    tr.appendChild(thDelete);
+    container.appendChild(tr);
 }
 
 function CheckItem(callback){
