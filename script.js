@@ -352,13 +352,30 @@ function AddItem(name, img, origin, bgcolor, link){
 				}else{
 					list.innerHTML = "";
 					LoadDB(list, GenTable);
+					ClearForm();
 				}
             }
         }
     };
     xhr.open("POST","php/addArticles.php");
     xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    xhr.send(content);	
+    xhr.send(content);
+}
+
+function ClearForm(){
+	// Variables
+	let newName = document.getElementById("newName");
+	let newImg = document.getElementById("newImg");
+	let newBgcolor = document.getElementById("newBgcolor");
+	let newBgcolorPicker = document.getElementById("newBgcolorPicker");
+	let newLink = document.getElementById("newLink");
+
+	// Code
+	newName.value = "";
+	newImg.value = "";
+	newBgcolor.value = "#000000";
+	newBgcolorPicker.value = "#000000";
+	newLink.value = "";
 }
 
 function RotateElement(tag, min, max){
