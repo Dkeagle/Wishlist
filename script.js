@@ -59,7 +59,7 @@ function ErrorHandler(errorCode){
 		case "P10":
 			passwd.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				passwd.style.border = "none";
+				passwd.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "Incorrect password!";
 			break;
@@ -67,7 +67,7 @@ function ErrorHandler(errorCode){
 		case "N10":
 			name.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				name.style.border = "none";
+				name.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "The new item need a name!";
 			break;
@@ -75,7 +75,7 @@ function ErrorHandler(errorCode){
 		case "N20":
 			name.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				name.style.border = "none";
+				name.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "The new item name cannot exceed 50 characters!";
 			break;
@@ -83,7 +83,7 @@ function ErrorHandler(errorCode){
 		case "I10":
 			img.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				img.style.border = "none";
+				img.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "The new item need an image!";
 			break;
@@ -91,7 +91,7 @@ function ErrorHandler(errorCode){
 		case "I20":
 			img.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				img.style.border = "none";
+				img.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "Unknown image format!";
 			break;
@@ -99,7 +99,7 @@ function ErrorHandler(errorCode){
 		case "B10":
 			bgcolor.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				bgcolor.style.border = "none";
+				bgcolor.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "Background color must be a correct hexadecimal color code!";
 			break;
@@ -107,7 +107,7 @@ function ErrorHandler(errorCode){
 		case "L10":
 			link.style.border = "3px solid #FF0000";
 			setTimeout(() => {
-				link.style.border = "none";
+				link.style.border = "2px inset";
 			}, 3000);
 			errorBox.innerHTML = "The new item need a link!";
 			break;
